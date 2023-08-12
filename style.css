@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Limelight', cursive;
+    font-size: 1.6rem;
+    background: url(img/bg.jpg) no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+img {
+    width: 100%;
+    max-width: 1000px;
+    border: .5rem solid #e2e0d0;
+    border-radius: 1rem;
+}
+
+.carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 1rem;
+}
+
+.carousel .carousel-item, .carousel-item-hidden {
+    display: none;
+}
+
+.carousel .carousel-item-visible {
+    display: block;
+    animation: fadeVisibility .5s;
+}
+
+.carousel-item {
+    position: relative;
+    padding: 0 1rem;
+}
+
+.carousel-name {
+    background-color: rgba(237, 51, 23, 0.6);
+    color: #fff;
+    padding: 1.5rem 3rem;
+    font-size: 2.2rem;
+    font-weight: bold;
+    border-radius: 1rem;
+
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    bottom: 8%;
+    transform: translateX(-50%);
+}
+
+.carousel .carousel-actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-actions button {
+    border: none;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(226, 224, 208, .75);
+    transition: all .5s;
+}
+
+.carousel-actions button:hover {
+    background-color: rgba(237, 51, 23, .75);
+    color: #e2e0d0;
+    transform: scale(1.08);
+    box-shadow: 0px 0px 10px 2px rgba(237, 51, 23, .75);
+}
+
+.carousel-actions button#carousel-button-prev {
+    margin-left: 3rem;
+}
+
+.carousel-actions button#carousel-button-next {
+    margin-right: 3rem;
+}
+
+.slide-number {
+    position: absolute;
+    bottom: 8%;
+    right: 3%;
+
+    background-color: rgba(237, 51, 23, .75);
+    color: #e2e0d0;
+    border-radius: 50%;
+    padding: 1.4rem .8rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+@keyframes fadeVisibility {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    html {
+        font-size: 8.5px;
+    }
+    .carousel-name {
+        padding: 1rem 2rem;
+    }
+    .slide-number {
+        bottom: 8%;
+        right: 4%;
+    }
+}
+
+@media(max-width: 576px) {
+    html {
+        font-size: 7.5px;
+    }
+    .carousel-name {
+        width: 60%;
+        text-align: center;
+    }
+}
